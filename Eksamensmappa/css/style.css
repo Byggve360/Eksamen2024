@@ -44,10 +44,11 @@ header {
 
 #global-header nav a:hover {
     font-size: 20px;
+    font-weight: bold;
 } 
 
 .slide-container {
-    padding: 1rem;
+    padding: 0rem;
     width: 80%;  
     margin: auto;
     overflow: hidden;
@@ -62,17 +63,57 @@ header {
 }
 
 .slide {
-    flex: 0 0 100%; 
-    scroll-snap-align: center; 
+    flex: 0 0 100%;
+    scroll-snap-align: center;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .slide img {
     width: 80%;
     height: 80%;
     border-radius: 3%;
+    object-fit: cover;
 }
 
+.slide h2{
+    position: absolute;
+    color: white; 
+    font-size: 1.8rem;
+    top: 25%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 80%;
+
+}
+
+.slide p {
+    position: absolute;
+    color: white; 
+    font-size: 1.1rem;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 80%;
+}
+
+.btn {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: black;
+    border-radius: 30%;
+    font-weight: bold;
+  }
+
+  
 .slides::-webkit-scrollbar {
     display: none;
 }
@@ -83,7 +124,58 @@ header {
     width: 85px;
 }
 
-.shortcuts ul{
-    color: black;
+#global-footer {
+    display: flex;
+    justify-content: space-between; 
+    padding: 3rem 5rem;
+    background-color: #f5f5f5;
+    align-items: flex-start; 
+}
+
+#global-footer section {
+    flex: 1; 
+    margin-right: 3rem;
+}
+
+#global-footer .information {
+    font-size: 0.9rem;
+}
+
+#global-footer .information li {
+    margin: 0.5rem 0;
     list-style: none;
+}
+
+#global-footer .shortcuts ul {
+    list-style: none;
+    padding: 0;
+}
+
+#global-footer .shortcuts ul li {
+    margin: 0.25rem 0;
+}
+
+#global-footer .shortcuts ul li a:hover {
+    font-weight: bold;
+}
+
+#global-footer .shortcuts ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+#global-footer .social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+#global-footer .social-media ul li {
+    font-size: 1.5rem;
+}
+
+#global-footer .social-media ul li a{
+    text-decoration: none;
+    color: black;
 }
