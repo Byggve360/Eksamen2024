@@ -12,18 +12,6 @@ header {
     background-color: #f5f5f5;
 }
 
-#logo img{
-    border-radius: 50%;
-    height: 85px;
-    width: 85px;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-}
-
 #main-grid #global-header ul {
     list-style: none;
     display:flex;
@@ -35,9 +23,67 @@ nav a {
   }
 
 #main-grid #global-header ul li a:hover {
-    color: black; /
+    color: black;
 }
 
 #main-grid #global-header ul li a:visited {
     color: black;
+}
+
+#logo img{
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+}
+
+#global-header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#global-header nav a:hover {
+    font-size: 20px;
+} 
+
+.slide-container {
+    padding: 1rem;
+    width: 80%;  
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    scroll-snap-type: x mandatory; 
+    overflow-x: auto; 
+    scroll-behavior: smooth; 
+}
+
+.slide {
+    flex: 0 0 100%; 
+    scroll-snap-align: center; 
+    text-align: center;
+}
+
+.slide img {
+    width: 80%;
+    height: 80%;
+    border-radius: 3%;
+}
+
+.slides::-webkit-scrollbar {
+    display: none;
+}
+
+#global-footer img{
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+}
+
+.shortcuts ul{
+    color: black;
+    list-style: none;
 }
