@@ -1,7 +1,7 @@
 /* Import Roboto fra Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/*Setter font for sidene, og maks bredde på 1600px*/
+/*setter font for sidene, og maks bredde på 1200px*/
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -66,7 +66,7 @@ header form i {
 /*hjem, produkt osv. knappene*/
 #global-header nav {
     display: flex;
-    align-items: center; /* Sørger for at nav-elementene er på samme linje */
+    align-items: center; /*sørger for at nav-elementene er på samme linje */
 }
 
 #global-header nav a {
@@ -109,11 +109,11 @@ header form i {
 }
 
 #main-grid #global-header ul li a i.fa-cart-shopping, #main-grid #global-header ul li a i.fa-heart, #main-grid #global-header ul li a i.fa-user-large {
-    transition: transform 0.3s ease; /* Glatt overgangseffekt */
+    transition: transform 0.3s ease; /*glatt overgangseffekt*/
 }
 
 #main-grid #global-header ul li a:hover i.fa-cart-shopping, #main-grid #global-header ul li a:hover i.fa-heart, #main-grid #global-header ul li a:hover i.fa-user-large {
-    transform: scale(1.5); /* Øker størrelsen med 50% */
+    transform: scale(1.5); /*øker størrelsen med 50%*/
 }
 
 
@@ -133,15 +133,15 @@ main {
 
 .slides {
     display: flex;
-    scroll-snap-type: x mandatory; 
-    overflow-x: auto; 
-    scroll-behavior: smooth; 
+    scroll-snap-type: x mandatory; /*gjør det mandatory å snap-scrolle til siden(2 fingre/dra med musepeker)*/
+    overflow-x: auto; /*kan gå horisontalt over hvis innhold er bredere enn containere*/
+    scroll-behavior: smooth; /*skifte blir smooth mellom slidene*/
     
 }
 
 .slide {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
+    flex: 0 0 100%; /*forkortelse for flex-basis, grown og shrink. 100% er flex-basis*/
+    scroll-snap-align: center; /*vil automatisk dra deg til en full slide, slik at du ikke blir "stuck" på en av dem forrige*/
     text-align: center;
     display: flex;
     align-items: center;
@@ -185,29 +185,6 @@ main {
     width: 80%;
 }
 
-/*les mer knappen*/
-.btn-slider { 
-    position: absolute;
-    bottom: 120px;
-    left: 82%;
-    padding: 1.4rem;
-    background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    color: black;
-    border-radius: 30%;
-    font-weight: bold;
-  }
-
-.btn-product {
-    margin: 2rem;
-    text-decoration: none;
-    font-size: 15px;
-    color: black;
-    border: 3px solid black;  /*svart border rundt produkt knapper*/
-    border-radius: 30%;
-    padding: 0.8rem;
-}
-
 /*piler for slider*/
 .slider-arrow {
     position: absolute;
@@ -230,16 +207,132 @@ main {
     right: 50px; /*plassering til høyre*/
 }
 
+/*les mer knappen*/
+.btn-slider { 
+    position: absolute;
+    bottom: 120px;
+    left: 82%;
+    padding: 1.4rem;
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: black;
+    border-radius: 30%;
+    font-weight: bold;
+  }
 
+.btn-product {
+    margin: 2rem;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    border: 2.5px solid black;  /*svart border rundt produkt knapper*/
+    border-radius: 30%;
+    padding: 0.8rem;
+}
+
+.btn-product:nth-child(3){
+    background-color: black;
+    color: white;
+}
+
+.btn-product:hover{
+    opacity: 0.7;
+    background-color: #000000;
+    color: white;
+}
+
+#pop-products p {
+    margin-bottom: 2rem;
+}
+
+
+
+/*popular products-gallery*/
+#product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding-top: 20px;
+}
+
+/*styling for hvert produkt*/
+.product-item {
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+/*bildene*/
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-item a{
+    text-decoration: none;
+    color:black;
+}
+
+/*tittel på produkt*/
+.product-item h3 {
+    font-size: 1.6rem;
+    text-align: left;
+    margin-left: 1rem;
+}
+
+/*pris på produkt*/
+.product-item p {
+    font-size: 1.2rem;
+    text-align: right;
+    margin-right: 1rem;
+    color: black;
+}
+
+/*stjerner*/
+.stars {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    margin: 0.5rem;
+}
+
+.stars li {
+    font-size: 1.2rem; 
+    margin: 2px 5px;
+}
+
+/*hjerteknapp*/
+.product-item i.fa-heart {
+    font-size: 1.5rem;
+    color: #aaa;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product-item i.fa-heart:hover {
+    color: rgb(199, 38, 38);
+}
+
+.review-count {
+    font-size: 0.5rem;
+    color: black;
+    margin-right: 1rem;
+}
+
+
+
+/*------------------------------------*/
 
 footer {
     grid-area: footer; /*setter grid-area footer*/
-}
-
-#global-footer img{
-    border-radius: 50%;
-    height: 85px;
-    width: 85px;
 }
 
 #global-footer {
@@ -250,50 +343,57 @@ footer {
     align-items: flex-start; 
 }
 
+/*logo i footer*/
+#global-footer img{
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+}
+
 #global-footer section {
     flex: 1; 
     margin-right: 3rem;
 }
 
-#global-footer .information {
+.information {
     font-size: 0.9rem;
 }
 
-#global-footer .information li {
+.information li {
     margin: 0.5rem 0;
     list-style: none;
 }
 
-#global-footer .shortcuts ul {
+.shortcuts ul {
     list-style: none;
     padding: 0;
 }
 
-#global-footer .shortcuts ul li {
+.shortcuts ul li {
     margin: 0.25rem 0;
 }
 
-#global-footer .shortcuts ul li a:hover {
+.shortcuts ul li a:hover {
     font-weight: bold;
 }
 
-#global-footer .shortcuts ul li a{
+.shortcuts ul li a{
     text-decoration: none;
     color: black;
 }
 
-#global-footer .social-media ul {
+.social-media ul {
     list-style: none;
     padding: 0;
     display: flex;
     gap: 1rem;
 }
 
-#global-footer .social-media ul li {
+.social-media ul li {
     font-size: 1.5rem;
 }
 
-#global-footer .social-media ul li a{
+.social-media ul li a{
     text-decoration: none;
     color: black;
 }
@@ -326,5 +426,20 @@ footer {
 
     header form input {
         width: 150px; /*juster størrelse på input-feltet */
+    }
+
+    .slide:nth-child(2),.slide:nth-child(3) {
+        display: none; /* Viser spesifikt den første sliden */
+    }
+
+    .left-arrow,
+    .right-arrow{
+        display: none;
+    }
+
+    .btn-slider{
+        position: absolute;
+        bottom: 40px;
+        left: 78%;
     }
 }
