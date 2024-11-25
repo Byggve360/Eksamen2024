@@ -37,10 +37,12 @@ header {
     font-size: 30px;
 }
 
+/*searchbaren*/
 header form {
     display: flex;
     align-items: center;
     position: relative; /*lar oss bruke absolutt posisjonering for ikonet*/
+    
 }
 
 header form input {
@@ -48,9 +50,10 @@ header form input {
     font-size: 1rem;
     border: 1.2px solid #000000; /*sort kant*/
     border-radius: 5px;
-    width: 200px;
+    width: 100%;
 }
 
+/*searchikonet*/
 header form i {
     position: absolute; /*plasseres inne i søkefeltet*/
     right: 10px; 
@@ -60,12 +63,12 @@ header form i {
     pointer-events: none; /*gjør ikonet ikke klikkbart*/
 }
 
+/*hjem, produkt osv. knappene*/
 #global-header nav {
     display: flex;
     align-items: center; /* Sørger for at nav-elementene er på samme linje */
 }
 
-/*hjem, produkt osv. knappene*/
 #global-header nav a {
     margin: 0 10px;
     text-decoration: none;
@@ -229,7 +232,6 @@ main {
 
 
 
-
 footer {
     grid-area: footer; /*setter grid-area footer*/
 }
@@ -294,4 +296,35 @@ footer {
 #global-footer .social-media ul li a{
     text-decoration: none;
     color: black;
+}
+
+@media only screen and (max-width: 700px) {
+
+    /*endrer grid-malen for mindre skjermer til 1 kolonne*/
+    /*definerer main-container som inneholder header, main og footer*/
+    #main-grid {
+        display: grid;
+        grid-template-areas: "header" "main" "footer";
+    }
+
+    header{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+
+    /*legger menypunktene under hverandre (inkl. logoen)*/
+    nav{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        align-items: center; /*sentere navigasjonen horisontalt */
+        justify-content: center; /*sentere navigasjonen vertikalt */
+        gap: 1rem;
+    }
+
+    header form input {
+        width: 150px; /*juster størrelse på input-feltet */
+    }
 }
