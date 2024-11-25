@@ -1,17 +1,89 @@
+/* Import Roboto fra Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/*Setter font for sidene, og maks bredde på 1600px*/
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; /*fjerner og klipper bort innhold som strekker seg utenfor skjermen*/
+}
+
+header {
+    grid-area: header; /*setter grid-area header*/
 }
 
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 2rem 5rem;
+    padding: 1.5rem 5rem;
     background-color: #f5f5f5;
 }
 
+#main-grid {
+    text-align: center;
+    grid-template-areas: 
+    "header header header" 
+    "main main main" 
+    "footer footer footer";
+}
+
+#main-grid h2{
+    font-size: 30px;
+}
+
+header form {
+    display: flex;
+    align-items: center;
+    position: relative; /*lar oss bruke absolutt posisjonering for ikonet*/
+}
+
+header form input {
+    padding: 0.5rem 2.5rem 0.5rem 0.8rem;
+    font-size: 1rem;
+    border: 1.2px solid #000000; /*sort kant*/
+    border-radius: 5px;
+    width: 200px;
+}
+
+header form i {
+    position: absolute; /*plasseres inne i søkefeltet*/
+    right: 10px; 
+    top: 25%;
+    color: #aaa;
+    font-size: 1.2rem;
+    pointer-events: none; /*gjør ikonet ikke klikkbart*/
+}
+
+
+
+/*hjem, produkt osv. knappene*/
+#global-header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#global-header nav a:nth-child(1):hover,
+#global-header nav a:nth-child(2):hover,
+#global-header nav a:nth-child(4):hover,
+#global-header nav a:nth-child(5):hover{ /*alt i nav blir påvirket utenom 3, som er logoen*/
+    border-bottom: 3px solid black;
+    font-weight: bold;
+}
+
+#logo img{
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+}
+
+/*profil,hjerte og handlekurv ikonene*/
 #main-grid #global-header ul {
     list-style: none;
     display:flex;
@@ -30,29 +102,27 @@ header {
     color: black;
 }
 
-#logo img{
-    border-radius: 50%;
-    height: 85px;
-    width: 85px;
+#main-grid #global-header ul li a i.fa-cart-shopping, #main-grid #global-header ul li a i.fa-heart, #main-grid #global-header ul li a i.fa-user-large {
+    transition: transform 0.3s ease; /* Glatt overgangseffekt */
 }
 
-#global-header nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
+#main-grid #global-header ul li a:hover i.fa-cart-shopping, #main-grid #global-header ul li a:hover i.fa-heart, #main-grid #global-header ul li a:hover i.fa-user-large {
+    transform: scale(1.5); /* Øker størrelsen med 50% */
 }
 
-#global-header nav a:hover {
-    font-size: 20px;
-    font-weight: bold;
-} 
 
+/*---------------------------------------------------------*/
+
+
+main {
+    grid-area: main; /*setter grid-area main*/
+}
 .slide-container {
     padding: 0rem;
     width: 80%;  
     margin: auto;
-    overflow: hidden;
     position: relative;
+    background-color: white;
 }
 
 .slides {
@@ -60,6 +130,7 @@ header {
     scroll-snap-type: x mandatory; 
     overflow-x: auto; 
     scroll-behavior: smooth; 
+    
 }
 
 .slide {
@@ -72,40 +143,48 @@ header {
     position: relative;
 }
 
+/*endrer bildene på slideren*/
 .slide img {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     border-radius: 3%;
     object-fit: cover;
 }
 
-.slide h2{
+/*fjerner scrollbaren*/
+.slides::-webkit-scrollbar {
+    display: none;
+}
+
+/*setter overskriften fiksert til bildet*/
+.slide h3{
+    text-align: right;
     position: absolute;
     color: white; 
-    font-size: 1.8rem;
-    top: 25%; 
-    left: 50%;
-    transform: translate(-50%, -50%); 
+    font-size: 2.2rem;
+    top: 22%; 
+    left: 13%;
     width: 80%;
 
 }
 
+/*setter underteksten fiksert til bildet*/
 .slide p {
+    text-align: right;
     position: absolute;
     color: white; 
     font-size: 1.1rem;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%); 
+    top: 40%; 
+    left: 13%;
     width: 80%;
 }
 
-.btn {
+/*les mer knappen*/
+.btn-slider { 
     position: absolute;
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1.2rem;
+    bottom: 120px;
+    left: 82%;
+    padding: 1.4rem;
     background-color: rgb(255, 255, 255);
     text-decoration: none;
     color: black;
@@ -113,9 +192,43 @@ header {
     font-weight: bold;
   }
 
-  
-.slides::-webkit-scrollbar {
-    display: none;
+.btn-product {
+    margin: 2rem;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    border: 3px solid black;  /*svart border rundt produkt knapper*/
+    border-radius: 30%;
+    padding: 0.8rem;
+}
+
+/*piler for slider*/
+.slider-arrow {
+    position: absolute;
+    top: 50%; /*plasser pilene i midten vertikalt*/
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3); /*halvgjennomsiktig bakgrunn*/
+    color: white;
+    border: none;
+    font-size: 2rem;
+    z-index: 10; /*plasserer pilene lengst fremme, slik at de alltid syns*/
+    padding: 0.5rem 1rem;
+    border-radius: 100%;
+}
+
+.left-arrow {
+    left: 50px; /*plassering til venstre*/
+}
+
+.right-arrow {
+    right: 50px; /*plassering til høyre*/
+}
+
+
+
+
+footer {
+    grid-area: footer; /*setter grid-area footer*/
 }
 
 #global-footer img{
