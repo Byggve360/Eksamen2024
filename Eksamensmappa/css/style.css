@@ -60,7 +60,10 @@ header form i {
     pointer-events: none; /*gjør ikonet ikke klikkbart*/
 }
 
-
+#global-header nav {
+    display: flex;
+    align-items: center; /* Sørger for at nav-elementene er på samme linje */
+}
 
 /*hjem, produkt osv. knappene*/
 #global-header nav a {
