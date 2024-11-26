@@ -5,7 +5,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    max-width: 1200px;
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -13,24 +12,22 @@ body {
     overflow-x: hidden; /*fjerner og klipper bort innhold som strekker seg utenfor skjermen*/
 }
 
-header {
+#main-grid {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    text-align: center;
+}
+
+#global-header {
     grid-area: header; /*setter grid-area header*/
 }
 
-header {
-    display: flex;
+#global-header{
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1.5rem 5rem;
-    background-color: #f5f5f5;
-}
-
-#main-grid {
-    text-align: center;
-    grid-template-areas: 
-    "header header header" 
-    "main main main" 
-    "footer footer footer";
+    background-color: white;
 }
 
 #main-grid h2{
@@ -38,23 +35,23 @@ header {
 }
 
 /*searchbaren*/
-header form {
+#global-header form {
     display: flex;
     align-items: center;
     position: relative; /*lar oss bruke absolutt posisjonering for ikonet*/
     
 }
 
-header form input {
+#global-header form input {
     padding: 0.5rem 2.5rem 0.5rem 0.8rem;
     font-size: 1rem;
     border: 1.2px solid #000000; /*sort kant*/
     border-radius: 5px;
-    width: 100%;
+    width: 150px;
 }
 
 /*searchikonet*/
-header form i {
+#global-header form i {
     position: absolute; /*plasseres inne i søkefeltet*/
     right: 10px; 
     top: 25%;
@@ -66,21 +63,17 @@ header form i {
 /*hjem, produkt osv. knappene*/
 #global-header nav {
     display: flex;
+    flex-direction: column;
+    padding: 1rem;
     align-items: center; /*sørger for at nav-elementene er på samme linje */
+    justify-content: center; /*sentere navigasjonen vertikalt */
+    gap: 1rem;
 }
 
 #global-header nav a {
     margin: 0 10px;
     text-decoration: none;
     color: black;
-}
-
-#global-header nav a:nth-child(1):hover,
-#global-header nav a:nth-child(2):hover,
-#global-header nav a:nth-child(4):hover,
-#global-header nav a:nth-child(5):hover{ /*alt i nav blir påvirket utenom 3, som er logoen*/
-    border-bottom: 3px solid black;
-    font-weight: bold;
 }
 
 #logo img{
@@ -100,20 +93,8 @@ header form i {
     color: black;
   }
 
-#main-grid #global-header ul li a:hover {
-    color: black;
-}
-
 #main-grid #global-header ul li a:visited {
     color: black;
-}
-
-#main-grid #global-header ul li a i.fa-cart-shopping, #main-grid #global-header ul li a i.fa-heart, #main-grid #global-header ul li a i.fa-user-large {
-    transition: transform 0.3s ease; /*glatt overgangseffekt*/
-}
-
-#main-grid #global-header ul li a:hover i.fa-cart-shopping, #main-grid #global-header ul li a:hover i.fa-heart, #main-grid #global-header ul li a:hover i.fa-user-large {
-    transform: scale(1.5); /*øker størrelsen med 50%*/
 }
 
 
@@ -185,6 +166,10 @@ main {
     width: 80%;
 }
 
+.slide:nth-child(2),.slide:nth-child(3) {
+    display: none; /*viser spesifikt den første sliden på mobil*/
+}
+
 /*piler for slider*/
 .slider-arrow {
     position: absolute;
@@ -207,11 +192,16 @@ main {
     right: 50px; /*plassering til høyre*/
 }
 
+.left-arrow,
+.right-arrow{
+    display: none; /*skjuler pilene på mobil*/
+}
+
 /*les mer knappen*/
 .btn-slider { 
     position: absolute;
-    bottom: 120px;
-    left: 82%;
+    bottom: 40px;
+    left: 78%;
     padding: 1.4rem;
     background-color: rgb(255, 255, 255);
     text-decoration: none;
@@ -226,7 +216,7 @@ main {
     font-size: 15px;
     color: black;
     border: 2.5px solid black;  /*svart border rundt produkt knapper*/
-    border-radius: 30%;
+    border-radius: 50px;
     padding: 0.8rem;
 }
 
@@ -235,22 +225,13 @@ main {
     color: white;
 }
 
-.btn-product:hover{
-    opacity: 0.7;
-    background-color: #000000;
-    color: white;
-}
-
-#pop-products p {
+#product-buttons p{
     margin-bottom: 2rem;
 }
-
-
 
 /*popular products-gallery*/
 #product-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     justify-items: center;
     padding-top: 20px;
@@ -263,10 +244,12 @@ main {
     width: 100%;
     text-align: center;
     position: relative;
+
 }
 
 /*bildene*/
 .product-item img {
+    min-width: 90%;
     max-width: 100%;
     height: auto;
     border-radius: 10px;
@@ -285,11 +268,32 @@ main {
 }
 
 /*pris på produkt*/
-.product-item p {
+.product-tekst-placement p {
     font-size: 1.2rem;
     text-align: right;
     margin-right: 1rem;
     color: black;
+}
+
+/*tekst for hvor mange reviews*/
+.product-item .review-count {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    color: black;
+}
+
+/*plassering av product name og prisen*/
+.product-tekst-placement{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*plassering av reviews tekst og stjerner*/
+.reviews{
+    display: flex;
+    align-items: center;
 }
 
 /*stjerner*/
@@ -297,7 +301,6 @@ main {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: left;
     margin: 0.5rem;
 }
 
@@ -308,17 +311,11 @@ main {
 
 /*hjerteknapp*/
 .product-item i.fa-heart {
-    font-size: 1.5rem;
+    font-size: 4.5rem;
     color: #aaa;
     position: absolute;
-    top: 30px;
-    right: 50px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.product-item i.fa-heart:hover {
-    color: rgb(199, 38, 38);
+    top: 50px;
+    right: 80px;
 }
 
 .review-count {
@@ -331,16 +328,17 @@ main {
 
 /*------------------------------------*/
 
-footer {
+#global-footer {
     grid-area: footer; /*setter grid-area footer*/
 }
 
 #global-footer {
-    display: flex;
+    display: grid;
     justify-content: space-between; 
-    padding: 3rem 5rem;
-    background-color: #f5f5f5;
-    align-items: flex-start; 
+    padding: 1rem;
+    background-color: white;
+    align-items:center;
+    text-align: left;
 }
 
 /*logo i footer*/
@@ -348,11 +346,6 @@ footer {
     border-radius: 50%;
     height: 85px;
     width: 85px;
-}
-
-#global-footer section {
-    flex: 1; 
-    margin-right: 3rem;
 }
 
 .information {
@@ -386,7 +379,7 @@ footer {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .social-media ul li {
@@ -398,48 +391,108 @@ footer {
     color: black;
 }
 
-@media only screen and (max-width: 700px) {
 
-    /*endrer grid-malen for mindre skjermer til 1 kolonne*/
+
+
+
+@media only screen and (min-width: 701px) {
+
+    /*endrer grid-malen for skjermer større enn 699px til desktop*/
     /*definerer main-container som inneholder header, main og footer*/
     #main-grid {
-        display: grid;
-        grid-template-areas: "header" "main" "footer";
+        text-align: center;
+        grid-template-areas: 
+        "header header header" 
+        "main main main" 
+        "footer footer footer";
     }
 
-    header{
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        background-color: white;
+    /*setter størrelsen max 1200px, da dette er destopstørrelsen*/
+    body{
+        max-width: 1200px;
     }
 
-    /*legger menypunktene under hverandre (inkl. logoen)*/
-    nav{
+    #global-header {
         display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        align-items: center; /*sentere navigasjonen horisontalt */
-        justify-content: center; /*sentere navigasjonen vertikalt */
-        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f5f5f5;
     }
 
-    header form input {
-        width: 150px; /*juster størrelse på input-feltet */
+    /*hjem, produkt osv. knappene*/
+    #global-header nav {
+        display: flex;
+        align-items: center; /*sørger for at nav-elementene er på samme linje */
+        flex-direction: row;
+        padding: 0rem;
+        justify-content: none;
+        gap: 0rem;
     }
+
+    #global-header nav a:nth-child(1):hover,
+    #global-header nav a:nth-child(2):hover,
+    #global-header nav a:nth-child(4):hover,
+    #global-header nav a:nth-child(5):hover{ /*alt i nav blir påvirket utenom 3, som er logoen*/
+    border-bottom: 3px solid black;
+    font-weight: bold;
+}
+
+    #global-header form input {
+        width: 100%; /*juster størrelse på input-feltet */
+    }
+
+    #main-grid #global-header ul li a:hover {
+        color: black;
+    }
+
+    #main-grid #global-header ul li a i.fa-cart-shopping, #main-grid #global-header ul li a i.fa-heart, #main-grid #global-header ul li a i.fa-user-large {
+        transition: transform 0.3s ease; /*glatt overgangseffekt*/
+    }
+    
+    #main-grid #global-header ul li a:hover i.fa-cart-shopping, #main-grid #global-header ul li a:hover i.fa-heart, #main-grid #global-header ul li a:hover i.fa-user-large {
+        transform: scale(1.5); /*øker størrelsen med 50%*/
+    }
+
+
+/*--------------------------*/
+
 
     .slide:nth-child(2),.slide:nth-child(3) {
-        display: none; /* Viser spesifikt den første sliden */
-    }
-
-    .left-arrow,
-    .right-arrow{
-        display: none;
+        display: flex; /*viser alle sliders */
     }
 
     .btn-slider{
         position: absolute;
-        bottom: 40px;
-        left: 78%;
+        bottom: 80px;
+        left: 82%;
+    }
+
+    .btn-product:hover{
+        opacity: 0.7;
+        background-color: #000000;
+        color: white;
+    }
+
+    .left-arrow,
+    .right-arrow{
+        display: flex;
+    }
+
+    #product-gallery{
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Maks 3 produkter per rad */
+        max-width: 1200px; /* Maks bredde for galleriet */
+        margin: 2%;
+    }
+
+    .product-item i.fa-heart{
+        font-size: 1.5rem;
+        top: 35px;
+        right: 60px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .product-item i.fa-heart:hover {
+        color: rgb(199, 38, 38);
     }
 }
