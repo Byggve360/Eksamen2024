@@ -3,22 +3,26 @@ Bilder brukt for siden:
 index.html:
 
 Logo:
-koala.jpg "https://pixabay.com/illustrations/koala-on-tree-blue-tree-4373467/"
+koala.jpg https://pixabay.com/illustrations/koala-on-tree-blue-tree-4373467/
 ------------------------------------
 Slider:
-tropical.jpg "https://pixabay.com/photos/tropical-rainforest-forest-trees-7459826/bridge_forest.jpg"
-bridge_forest.jpg "https://pixabay.com/photos/bridge-nature-forest-path-4989466/"
-forest.png "https://pixabay.com/illustrations/ai-generated-path-rainforest-jungle-8081946/"
+tropical.jpg https://pixabay.com/photos/tropical-rainforest-forest-trees-7459826/bridge_forest.jpg
+bridge_forest.jpg https://pixabay.com/photos/bridge-nature-forest-path-4989466/
+forest.png https://pixabay.com/illustrations/ai-generated-path-rainforest-jungle-8081946/
 --------------------------------------
 Kategorier:
-forest_fire.jpg "https://pixabay.com/photos/forest-fire-trees-burning-forest-432870/"
-koala_distant.jpg "https://pixabay.com/photos/woman-forest-koala-mist-mysterious-6553258/"
-inscet.jpg "https://pixabay.com/photos/insect-janome-chow-leaf-rest-2158243/"
-leaf.jpg "https://pixabay.com/photos/green-fern-flora-plants-botany-4183977/"
-koala_close.jpg "https://pixabay.com/photos/koala-nature-animals-legs-630117/"
+forest_fire.jpg https://pixabay.com/photos/forest-fire-trees-burning-forest-432870/
+koala_distant.jpg https://pixabay.com/photos/woman-forest-koala-mist-mysterious-6553258/
+inscet.jpg https://pixabay.com/photos/insect-janome-chow-leaf-rest-2158243/
+leaf.jpg https://pixabay.com/photos/green-fern-flora-plants-botany-4183977/
+koala_close.jpg https://pixabay.com/photos/koala-nature-animals-legs-630117/
 
 --------------------------------------
 
 product.html:
+
+t_shirt.jpg https://pixabay.com/photos/t-shirt-white-clothes-rags-empty-1278404/
+koala_for_t_shirt.png https://pixabay.com/photos/kola-bear-bear-australia-koala-2730646/
+t_shirt_koala.png "#" - Var laget ved å kombinere t_shirt.jpg og koala_for_t_shirt i paint.
 
 checkout.html
