@@ -40,12 +40,13 @@
         <div class="checkout">
             <h2>Kasse</h2>
             <section id="shopping-bag">
+                <h2>1.SHOPPINGBAGEN DIN</h2>
                 <figure class="checkout-product">
                     <img src="css/ressurser/t_shirt_koala.png" alt="t-shirt with a koala">
                     <section>
                         <h3>PRODUCT NAME</h3>
                         <p>Kr 1249,-</p>
-                        <p>Farge: kritt-hvit</p>
+                        <p>Farge: kritthvit</p>
                     </section>
                     <section class="shopping-bag-icons">
                         <ul>
@@ -72,32 +73,40 @@
         </div>
 
         <div class="personal-information">
-            <h2>DINE OPPLYSNINGER</h2>
+            <h2>2.DINE OPPLYSNINGER</h2>
             <h4>Leveringsadresse</h4>
             <form class="place-of-residence">
                 <label for="firstname">Fornavn</label>
-                <input type="firstname" placeholder=" Anton*"/>
+                <input type="text" id="firstname" maxlenght="20" placeholder=" Anton*" required/>
 
                 <label for="secondname">Etternavn</label>
-                <input type="secondname" placeholder=" Antonsen*">
+                <input type="text" id="secondname" maxlenght="50" placeholder=" Antonsen*" required>
 
                 <label for="street-address">Gateadresse</label>
-                <input type="street-address" placeholder=" BRA veien 4*">
+                <input type="text" id="street-address" maxlenght="50" placeholder=" BRA veien 4*" required>
 
                 <label for="postnumber">Postnummer</label>
-                <input type="postnumber" placeholder=" 1752*"/>
+                <input type="number" id="postnumber" maxlenght="50" placeholder=" 1752*" required/>
 
                 <label for="city">Poststed</label>
-                <input type="city" placeholder=" Halden*"/>
+                <input type="text" id="city" maxlenght="50" placeholder=" Halden*" required/>
             </form>
             <h4>Kontaktinformasjon</h4>
             <form class="contact-information">
-                <label for="e-mail">E-post</label>
-                <input type="e-mail" placeholder=" Antonantonsen@hiof.no*"/>
+                <label for="email">E-post</label>
+                <input type="email" id="email" maxlenght="50" placeholder=" Antonantonsen@hiof.no*" required/>
 
                 <label for="phonenumber">Telefon</label>
-                <input type="phonenumber" placeholder=" +4749***018"/>
+                <input type="tel" id="phonenumber" placeholder=" +4749***018" required>
             </form> 
+            <section class="btn-personal-information">
+                <input type="button" onclick="alert('Lagret')" value="Lagre">
+                <a href="index.html">Avbryt</a>
+            </section>
+        </div>
+
+        <div class="delivery">
+            <h2>3.LEVERING</h2>
         </div>
 
     </main>
