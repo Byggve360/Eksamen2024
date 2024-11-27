@@ -12,7 +12,7 @@
     <title>Per Anders's Nettbutikk</title>
 </head>
 
-<body>
+<body id="index">
     <div id="main-grid">
     <header id="global-header">
         <form>
@@ -26,8 +26,8 @@
             <a href="index.html#pop-products">Produkter</a>
             <a href="index.html" id="logo">
                 <img src="css/ressurser/koala.jpg" alt="logo"></a>
-            <a href="index.html#categories">Kategorier</a>
-            <a href="index.html#global-footer">Kontakt oss</a>
+            <a href="index.html#pop-categories">Kategorier</a>
+            <a href="checkout.html#global-footer">Kontakt oss</a>
         </nav>
         <ul>
             <li><a href="#"><i class="fa-solid fa-user-large"></i></a></li>
@@ -35,8 +35,104 @@
             <li><a href="checkout.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
     </header>
+
     <main>
+        <div class="checkout">
+            <h2>Kasse</h2>
+            <section id="shopping-bag">
+                <figure class="checkout-product">
+                    <img src="css/ressurser/t_shirt_koala.png" alt="t-shirt with a koala">
+                    <section>
+                        <h3>PRODUCT NAME</h3>
+                        <p>Kr 1249,-</p>
+                        <p>Farge: kritt-hvit</p>
+                    </section>
+                    <section class="shopping-bag-icons">
+                        <ul>
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </ul>
+                    </section>
+                    <form>
+                        <select class="sizes">
+                            <option value="">Velg størrelse</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                        </select>
+                    </form>
+                    <section class="number-of">
+                        <input type="number" value="1"/>
+                    </section>
+                </figure>
+            </section>
+            <!--------Flere nedover her-->
+        </div>
+
+        <div class="personal-information">
+            <h2>DINE OPPLYSNINGER</h2>
+            <h4>Leveringsadresse</h4>
+            <form class="place-of-residence">
+                <label for="firstname">Fornavn</label>
+                <input type="firstname" placeholder=" Anton*"/>
+
+                <label for="secondname">Etternavn</label>
+                <input type="secondname" placeholder=" Antonsen*">
+
+                <label for="street-address">Gateadresse</label>
+                <input type="street-address" placeholder=" BRA veien 4*">
+
+                <label for="postnumber">Postnummer</label>
+                <input type="postnumber" placeholder=" 1752*"/>
+
+                <label for="city">Poststed</label>
+                <input type="city" placeholder=" Halden*"/>
+            </form>
+            <h4>Kontaktinformasjon</h4>
+            <form class="contact-information">
+                <label for="e-mail">E-post</label>
+                <input type="e-mail" placeholder=" Antonantonsen@hiof.no*"/>
+
+                <label for="phonenumber">Telefon</label>
+                <input type="phonenumber" placeholder=" +4749***018"/>
+            </form> 
+        </div>
+
     </main>
+
+    <footer id="global-footer">
+        <section class="top">
+            <img src="css/ressurser/koala.jpg" alt="mini-logo">
+            <p>Mauris non urna aliquet, volutpat dui eu, tincidunt ex. Nulla fermentum malesuada facilisis. Pellentesque placerat et nisl id fringilla.</p>
+        </section>
+        <section class="information">
+            <h3>KONTAKT</h3>
+            <ul>
+                <li><i class="fa-solid fa-location-dot"></i> Adresse: B R A Veien 4, 1757 Halden</li>
+                <li><i class="fa-solid fa-phone"></i> Telefon: 69 60 80 00</li>
+                <li><i class="fa-solid fa-envelope"></i> E-post: pafredri@hiof.no</li>
+                <li><i class="fa-solid fa-clock"></i> Åpningstider: 07:00 - 15:30</li>
+            </ul>
+        </section>
+        <section class="shortcuts">
+            <h3>SNARVEIER</h3>
+            <ul>
+                <li><a href="index.html#categories">Kategorier</a></li>
+                <li><a href="product.html">Produkter</a></li>
+                <li><a href="index.html#contact">Kontakt oss</a></li>
+            </ul>
+        </section>
+        <section class="social-media">
+            <h3>SOSIALE MEDIER</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.pinterest.com/"><i class="fa-brands fa-pinterest"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </section>
     </footer>
     </div>
 </body>
