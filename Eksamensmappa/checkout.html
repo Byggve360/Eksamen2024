@@ -12,8 +12,8 @@
     <title>Per Anders's Nettbutikk</title>
 </head>
 
-<body id="index">
-    <div id="main-grid">
+<body id="checkout">
+    <div class="main-grid">
     <header id="global-header">
         <form>
             <label>
@@ -38,7 +38,7 @@
 
     <main>
         <div class="checkout">
-            <h2>Kasse</h2>
+            <h1>Kasse</h1>
             <section id="shopping-bag">
                 <h2>1.SHOPPINGBAGEN DIN</h2>
                 <figure class="checkout-product">
@@ -55,8 +55,8 @@
                         </ul>
                     </section>
                     <form>
-                        <select class="sizes">
-                            <option value="">Velg størrelse</option>
+                        <select class="sizes" required>
+                            <option value=""disabled selected>Velg størrelse</option>
                             <option value="s">S</option>
                             <option value="m">M</option>
                             <option value="l">L</option>
@@ -64,7 +64,7 @@
                             <option value="xxl">XXL</option>
                         </select>
                     </form>
-                    <section class="number-of">
+                    <section class="number-of" required>
                         <input type="number" value="1"/>
                     </section>
                 </figure>
@@ -80,10 +80,10 @@
                 <input type="text" id="firstname" maxlenght="20" placeholder=" Anton*" required/>
 
                 <label for="secondname">Etternavn</label>
-                <input type="text" id="secondname" maxlenght="50" placeholder=" Antonsen*" required>
+                <input type="text" id="secondname" maxlenght="50" placeholder=" Antonsen*" required><br>
 
                 <label for="street-address">Gateadresse</label>
-                <input type="text" id="street-address" maxlenght="50" placeholder=" BRA veien 4*" required>
+                <input type="text" id="street-address" maxlenght="50" placeholder=" BRA veien 4*" required><br>
 
                 <label for="postnumber">Postnummer</label>
                 <input type="number" id="postnumber" maxlenght="50" placeholder=" 1752*" required/>
@@ -94,7 +94,7 @@
             <h4>Kontaktinformasjon</h4>
             <form class="contact-information">
                 <label for="email">E-post</label>
-                <input type="email" id="email" maxlenght="50" placeholder=" Antonantonsen@hiof.no*" required/>
+                <input type="email" id="email" maxlenght="50" placeholder=" Antonantonsen@hiof.no*" required/><br>
 
                 <label for="phonenumber">Telefon</label>
                 <input type="tel" id="phonenumber" placeholder=" +4749***018" required>
@@ -107,8 +107,73 @@
 
         <div class="delivery">
             <h2>3.LEVERING</h2>
+            <h4>LEVERINGSVALG</h4>
+            <label class="delivery-option">
+                <section class="top-delivery">
+                    <input type="radio" name="choose" value="express-home" required>
+                    <strong>Express Hjemlevering</strong>
+                    <p>59 kr</p>
+                    <i class="fa-solid fa-truck-fast"></i>
+                </section>
+                <section class="info-delivery">
+                    <p>3-4 Virkedager</p>
+                    <p>Bestill hverdag før 08:00* for levering neste arbeidsdag. Leveres hjem til deg før frokost mandag til lørdag. *For levering til postnummer 4000-7999 er leveringstiden 2 arbeidsdager, for postnummer 8000-9999 er leveringstiden 3 arbeidsdager.</p>
+                </section>
+            </label>
+            <label class="delivery-option">
+                <section class="top-delivery">
+                    <input type="radio" name="choose"value="express-away">
+                    <strong>Express Pakke til utleveringssted</strong>
+                    <p>59 kr</p>
+                    <i class="fa-solid fa-shop"></i>
+                </section>
+                <section class="info-delivery">
+                    <p>1-3 Virkedager</p>
+                </section>
+            </label>
+            <label class="delivery-option">
+                <section class="top-delivery">
+                    <input type="radio" name="choose" value="standard">
+                    <strong>Standard Hjemlevering</strong>
+                    <p>Gratis</p>
+                    <i class="fa-solid fa-box"></i>
+                </section>
+                <section class="info-delivery">
+                    <p>5-8 Virkedager</p>
+                    <p>Leveres hjem til deg før frokost mandag til lørdag innen 4-7 hverdager</p>
+                </section>
+            </label>
         </div>
 
+        <div class="payment">
+            <h2>4.BETALING</h2>
+            <section class="card">
+                <h4>BETAL MED KORT</h4>
+                <i class="fa-solid fa-credit-card"></i>
+            </section>
+            <form class="card-information">
+                <label for="cardnumber">Kortnummer</label>
+                <input type="number" id="cardnumber" maxlenght="16" placeholder=" 342342****4435" required/><br>
+
+                <label for="expiry-date">Utløpsdato</label>
+                <input type="month" id="expiry-date" required>
+
+                <label for="CVC">CVC/CVV</label>
+                <input type="number" id="CVC" maxlenght="10" placeholder=" CVC/CVV" required>
+            </form>
+            <section class="finish-payment">
+                <p>Å betale inkl. mva.</p>
+                <strong>3747 kr</strong>
+                <input type="button" value="Fullfør kjøp">
+                <p>Du bekrefter herved at opplysningene og dokumentene du har oppgitt er korrekte og fullstendige. Leverandøren forbeholder seg retten til å heve eller avslutte avtaleforholdet dersom det foreligger uriktige eller ufullstendige opplysninger.</p>
+            </section>
+            <form class="news">
+                <input type="checkbox" id="newsletter">
+                <label for="newsletter"> Ja takk! Send nyhetsbrev til meg.</label><br>
+
+                <input type="checkbox" id="newstext">
+                <label for="newstext"> Jeg ønsker å motta tekstmeldinger med tilbud og nyheter.</label>
+        </div>
     </main>
 
     <footer id="global-footer">

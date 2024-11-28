@@ -12,8 +12,8 @@
     <title>Per Anders's Nettbutikk</title>
 </head>
 
-<body>
-    <div id="main-grid">
+<body id="index">
+    <div class="main-grid">
     <header id="global-header">
         <form>
             <label>
@@ -43,19 +43,19 @@
                 <article class="slide">
                     <h3>Loretsum nibh non feremento</h3>
                     <p>Pellentesque eleifend odio dolor, eget placerat nibh facilisis non. Nunc fermentum lorem eu purus venenatis convallis. Nam lobortis porta elementum. Morbi efficitur sem sed libero rhoncus, iaculis pulvinar nunc blandit. Aliquam iaculis, velit nec mollis luctus, mi sem bibendum eros, id tincidunt nulla ante in leo. Aliquam tincidunt augue eget posuere egestas. Nulla et nulla felis.</p>
-                    <a href="#" class="btn-slider">Les mer</a>
+                    <button type="button" class="btn-slider">Les mer</button>
                     <img src="css/ressurser/forest.png" alt="a little exotic forest">
                 </article>
                 <article class="slide">
                     <h3>Loretsum nibh non feremento</h3>
                     <p>Pellentesque eleifend odio dolor, eget placerat nibh facilisis non. Nunc fermentum lorem eu purus venenatis convallis. Nam lobortis porta elementum. Morbi efficitur sem sed libero rhoncus, iaculis pulvinar nunc blandit. Aliquam iaculis, velit nec mollis luctus, mi sem bibendum eros, id tincidunt nulla ante in leo. Aliquam tincidunt augue eget posuere egestas. Nulla et nulla felis.</p>
-                    <a href="#" class="btn-slider">Les mer</a>
+                    <button type="button" class="btn-slider">Les mer</button>
                     <img src="css/ressurser/bridge_forest.jpg" alt="bridge in the forest">
                 </article>
                 <article class="slide">
                     <h3>Loretsum nibh non feremento</h3>
                     <p>Pellentesque eleifend odio dolor, eget placerat nibh facilisis non. Nunc fermentum lorem eu purus venenatis convallis. Nam lobortis porta elementum. Morbi efficitur sem sed libero rhoncus, iaculis pulvinar nunc blandit. Aliquam iaculis, velit nec mollis luctus, mi sem bibendum eros, id tincidunt nulla ante in leo. Aliquam tincidunt augue eget posuere egestas. Nulla et nulla felis.</p>
-                    <a href="#" class="btn-slider">Les mer</a>
+                    <button type="button" class="btn-slider">Les mer</button>
                     <img src="css/ressurser/tropical.jpg" alt="a tropical forest">
                 </article>
             </section>
@@ -68,9 +68,9 @@
                 <p>En smakebit av det vi har å tilby</p>
             </section>
             <section id="product-buttons">
-                <a href="#" class="btn-product">New Product</a>
-                <a href="#" class="btn-product">Special Price</a>
-                <a href="#" class="btn-product">Best Sellers</a>
+                <button type="button" class="btn-product">New Product</button>
+                <button type="button" class="btn-product">Special Price</button>
+                <button type="button" class="btn-product">Best Sellers</button>
             </section>
             <section id="product-gallery">
                     <figure class="product-item">
@@ -207,11 +207,68 @@
                 </figure>
             </section>
         </div>
-
-        <section id="reviews">
-            <h2>Annmeldelser</h2>
-                <!-- Anmeldelseskort her -->
-        </section>
+        <div id="customer-reviews">
+            <h3>Annmeldelser</h3>
+            <section id="customer-reviews-gallery">
+                    <figure class="customer-review-profile">
+                        <img src="css/ressurser/profile.jpg" alt="profile-review image">
+                            <h5>Byggve Fredriksen</h5>
+                            <ul class="stars">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p>Quisque egestas diam et enim bibendum, id elementum ante dignissim. Etiam ultricies nulla a vehicula lacinia. Aliquam dapibus ultrices massa. Nam condimentum dui at suscipit porta. Duis id nisi risus. Etiam facilisis orci id elit tempor ornare.</p>
+                        </figure>
+                    <figure class="customer-review-profile">
+                        <img src="css/ressurser/profile.jpg" alt="profile-review image">
+                            <h5>Byggve Fredriksen</h5>
+                            <ul class="stars">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p>Quisque egestas diam et enim bibendum, id elementum ante dignissim. Etiam ultricies nulla a vehicula lacinia. Aliquam dapibus ultrices massa. Nam condimentum dui at suscipit porta. Duis id nisi risus. Etiam facilisis orci id elit tempor ornare.</p>
+                        </figure><figure class="customer-review-profile">
+                        <img src="css/ressurser/profile.jpg" alt="profile-review image">
+                            <h5>Byggve Fredriksen</h5>
+                            <ul class="stars">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p>Quisque egestas diam et enim bibendum, id elementum ante dignissim. Etiam ultricies nulla a vehicula lacinia. Aliquam dapibus ultrices massa. Nam condimentum dui at suscipit porta. Duis id nisi risus. Etiam facilisis orci id elit tempor ornare.</p>
+                        </figure><figure class="customer-review-profile">
+                        <img src="css/ressurser/profile.jpg" alt="profile-review image">
+                            <h5>Byggve Fredriksen</h5>
+                            <ul class="stars">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p>Quisque egestas diam et enim bibendum, id elementum ante dignissim. Etiam ultricies nulla a vehicula lacinia. Aliquam dapibus ultrices massa. Nam condimentum dui at suscipit porta. Duis id nisi risus. Etiam facilisis orci id elit tempor ornare.</p>
+                        </figure><figure class="customer-review-profile">
+                        <img src="css/ressurser/profile.jpg" alt="profile-review image">
+                            <h5>Byggve Fredriksen</h5>
+                            <ul class="stars">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p>Quisque egestas diam et enim bibendum, id elementum ante dignissim. Etiam ultricies nulla a vehicula lacinia. Aliquam dapibus ultrices massa. Nam condimentum dui at suscipit porta. Duis id nisi risus. Etiam facilisis orci id elit tempor ornare.</p>
+                        </figure>        
+            </section>
+        </div>
     </main>
 
     <footer id="global-footer">
@@ -245,7 +302,6 @@
                 <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul>
         </section>
-
     </footer>
     </div>
 </body>
