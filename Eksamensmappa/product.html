@@ -15,29 +15,29 @@
 
 <body class="produkt-body">
     <div class="main-grid">
-        <header id="global-header">
+        <header id="global-header" role="banner">
             <form>
                 <label>
                     <input type="search" placeholder="søk her">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </label>
              </form>
-            <nav>
+            <nav aria-label="Produktside">
                 <a href="index.html">Hjem</a>
                 <a href="index.html#pop-products">Produkter</a>
                 <a href="index.html" id="logo">
                     <img src="css/ressurser/koala.jpg" alt="logo til nettsiden. en tegnet koala som sitter i et tre. treet har to greiner"></a>
                 <a href="index.html#pop-categories">Kategorier</a>
-                <a href="product.html#global-footer">Kontakt oss</a>
+                <a href="product.html#global-footer" aria-current="side">Kontakt oss</a>
             </nav>
             <ul>
-                <li><a href="#"><i class="fa-solid fa-user-large"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
-                <li><a href="checkout.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user-large" aria-label="figurprofil"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-heart" aria-label="favorithjerte"></i></a></li>
+                <li><a href="checkout.html"><i class="fa-solid fa-cart-shopping" aria-label="handlekurv ikon"></i></a></li>
             </ul>
         </header>
     
-        <main class="main-produkt">
+        <main class="main-produkt" role="main">
             <section id="breadcrumb">
                 <a href="index.html">Hjem</a> <i class="fa-solid fa-chevron-right"></i> <a href="index.html#pop-categories">Kategori</a> <i class="fa-solid fa-chevron-right"></i> <span class="bold-text"><a href="product.html">Produktnavn</a></span>
             </section>
@@ -90,25 +90,26 @@
                     </details>
                 </article>
 
-                <article id="Produktdetaljer">
+                <article id="produktdetails">
                     <details>
                         <summary>Produktdetaljer<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>                        
                         <p>Cras venenatis tristique commodo. Nullam pharetra porttitor augue in suscipit. Fusce blandit vestibulum eros, vitae euismod mi cursus ut. Suspendisse vulputate condimentum leo vitae laoreet. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                     </details>
                 </article>
 
-                <article id="Størrelsetabell">
+                <article id="sizetable">
                     <details>
                         <summary>Størrelsetabell<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <table>
+                                <caption>Oversikt over størrelser</caption>
                                 <thead>
                                     <tr>
-                                        <th>EU</th>
-                                        <th>INT</th>
-                                        <th>BRYSTVIDDE</th>
-                                        <th>LIVVIDDE</th>
-                                        <th>HOFTEMÅL</th>
+                                        <th scope="col">EU</th>
+                                        <th scope="col">INT</th>
+                                        <th scope="col">BRYSTVIDDE</th>
+                                        <th scope="col">LIVVIDDE</th>
+                                        <th scope="col">HOFTEMÅL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -266,7 +267,7 @@
 
             <footer id="global-footer">
         <section class="top">
-            <img src="css/ressurser/koala.jpg" alt="mini versjon av logoen fra toppen">
+            <img src="css/ressurser/koala.jpg" alt="" aria-hidden="true">
             <p>Mauris non urna aliquet, volutpat dui eu, tincidunt ex. Nulla fermentum malesuada facilisis. Pellentesque placerat et nisl id fringilla.</p>
         </section>
         <section class="information">
