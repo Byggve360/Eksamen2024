@@ -1,5 +1,5 @@
 /* Import Roboto fra Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"');
 
 /*setter font for sidene, og maks bredde på 1200px*/
 body {
@@ -12,9 +12,27 @@ body {
     overflow-x: hidden; /*fjerner og klipper bort innhold som strekker seg utenfor skjermen*/
 }
 
+
 .main-grid {
     grid-template-areas: "header" "main" "footer";
     text-align: center;
+}
+
+.skip-link {
+    position: absolute;
+    top: -46px; /*skjuler lenken utenfor skjermområdet, over headeren*/
+    left: 0;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 1000; /*forsikrer at knappen ALLTID vil ligge først*/
+}
+
+.skip-link:focus {
+    top: 0; /*gjør lenken synlig ved tastaturfokus*/
+    left: 10px;
 }
 
 #global-header {
@@ -29,8 +47,12 @@ body {
     background-color: white;
 }
 
+.main-grid h1{
+    font-size: 2.4rem;
+}
+
 .main-grid h2{
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 /*searchbaren*/
@@ -51,8 +73,8 @@ body {
 /*searchikonet*/
 #global-header form i {
     position: absolute; /*plasseres inne i søkefeltet*/
-    right: 10px; 
-    top: 25%;
+    right: 15px; 
+    top: 29%;
     color: #aaa;
     font-size: 1.2rem;
     pointer-events: none; /*gjør ikonet ikke klikkbart*/
@@ -62,9 +84,13 @@ body {
 #global-header nav {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     align-items: center; /*sørger for at nav-elementene er på samme linje */
     gap: 1rem;
+}
+
+#global-header nav,
+#global-header form{
+    padding: 0.4rem;
 }
 
 #global-header nav a {
@@ -106,7 +132,7 @@ main {
 }
 
 .slide-container {
-    padding: 0rem;
+    padding: 0.4rem;
     width: 100%;  
     margin: auto;
     position: relative;
@@ -134,11 +160,6 @@ main {
     object-fit: cover;
 }
 
-/*fjerner scrollbaren*/
-.slides::-webkit-scrollbar {
-    display: none;
-}
-
 /*setter overskriften fiksert til bildet*/
 .slide h3{
     text-align: right;
@@ -149,7 +170,6 @@ main {
     left: 13%;
     width: 80%;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /*skygge for mer tekstur og bedre lesbarhet*/
-
 }
 
 /*setter underteksten fiksert til bildet*/
@@ -172,7 +192,7 @@ main {
 .slider-arrow {
     position: absolute;
     top: 50%; /*plasser pilene i midten vertikalt*/
-    transform: translateY(-50%);
+    transform: translateY(-50%); /*for å holde posisjonen midt på*/
     background-color: rgba(0, 0, 0, 0.3); /*halvgjennomsiktig bakgrunn*/
     color: white;
     border: none;
@@ -205,7 +225,7 @@ main {
     background-color: rgb(255, 255, 255);
     text-decoration: none;
     color: black;
-    border-radius: 30%;
+    border-radius: 30px;
     font-weight: bold;
   }
 
@@ -225,9 +245,9 @@ main {
     color: white;
 }
 
-
 /*"En smakebit.." tekst får mer plass*/
 #product-title p{
+    font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
@@ -392,12 +412,19 @@ main {
     grid-area: category5;
 }
 
+#customer-reviews h3{
+    font-size: 2rem;
+    text-align: left;
+    margin: 0;
+    margin-left: 3rem;
+}
+
 /*flex-layout for anmeldelsene*/
 #customer-reviews-gallery {
     display: flex; /*flexbox for horizontal layout*/
     overflow-x: auto; /*horizontal scrolling*/
     scroll-behavior: smooth; /*smooth scrolling*/
-    padding: 1.5rem;
+    padding: 1rem 0rem 1.5rem 1rem;
 }
 
 /*individuelle anmeldelser*/
@@ -454,6 +481,7 @@ main {
 
 /*------------------------------------*/
 
+
 /*setter stil for main på produktsiden*/
 .main-produkt{
     grid-template-areas: "header" "main" "footer";
@@ -465,7 +493,6 @@ main {
     grid-template-columns: 1fr 1fr; /*en kolonne for produktinfo, en for bildene*/
     gap: 1rem;
 }
-
 
 /*styling for breadcrumb*/
 #breadcrumb {
@@ -482,7 +509,6 @@ main {
     font-weight: bold;
 }
 
-
 /*grid layout for produkt-siden */
 .produkt-container {
     display: grid;
@@ -490,7 +516,6 @@ main {
     align-items: start;
 }
 
-/*venstre kolonne: små bilder*/
 .pictures {
     display: grid;
     grid-template-columns: 1fr 2fr; /*små bilder venstre, stort bilde høyre */
@@ -498,6 +523,7 @@ main {
     max-width: 700px;
 }
 
+/*venstre kolonne: små bilder*/
 .productpictures-small {
     display: grid;
     grid-template-rows: repeat(3, 1fr); /*tre like rader for små bilder*/
@@ -509,18 +535,17 @@ main {
     object-fit: cover;
 }
 
-/* Stort bilde */
 .productpictures-big img {
     width: 100%;
     object-fit: cover;
     height: 100%; /* Fyll hele høyden som kreves */
 }
 
-/* Høyre kolonne: Produktdetaljer */
+/*produktdetaljer, høyre side*/
 .produkt-details {
     display: flex;
     flex-direction: column;
-    text-align: left; /* Sørger for at teksten er venstrejustert */
+    text-align: left; /*teksten blir plassert venstre*/
     max-width: 440px;
 }
 
@@ -536,7 +561,7 @@ main {
 }
 
 .produkt-details .pris {
-    font-size: 15px;
+    font-size: 20px;
     color: #333;
     margin: 0;
 }
@@ -638,6 +663,7 @@ details p {
 
 #product-title-product{
     padding: 1rem;
+    text-align: left;
 }
 
 #product-title-product a{
@@ -716,13 +742,17 @@ details p {
 }
 
 .review-1{
-    background: #fff; /* Hvit bakgrunn */
-    border-radius: 10px; /* Runde hjÃ¸rner */
-    padding: 20px; /* Innvendig avstand */
-    margin: 20px auto; /* Sentraliser og legg til margin */
-    max-width: 600px; /* Begrens bredden */
-
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
 }
+
+.review-1 h4{
+    font-size: 1.2rem;
+}
+
 
 /*---------------------------------------*/
 
@@ -769,6 +799,7 @@ details p {
 .information li {
     margin: 0.5rem 0rem 0rem -2.3rem;
     list-style: none;
+    text-decoration: none; /*i noen tilfeller ble det lagt til en strek under tlf nummer. Dette skal forhindre dette*/
 }
 
 .shortcuts{
@@ -806,7 +837,17 @@ details p {
     color: black;
 }
 
+.error-message {
+    display: none;
+    color: #CC0000;
+    font-size: 14px;
+    margin-top: 5px;
+}
 
+input:invalid:focus + .error-message,
+input:not(:placeholder-shown):invalid + .error-message {
+    display: block;
+}
 
 
 
@@ -840,7 +881,6 @@ details p {
         display: flex;
         align-items: center; /*sørger for at nav-elementene er på samme linje */
         flex-direction: row;
-        justify-content: none;
         gap: 0rem;
         padding: 0rem clamp(0rem, 0.5vh, 2rem);
     }
@@ -877,6 +917,11 @@ details p {
 
 
 /*--------------------------*/
+
+    .main-grid h1{
+        font-size: 3.6rem;
+        margin: 0;
+    }
 
     .main-grid h2{
         font-size: 3.2rem;
@@ -928,7 +973,13 @@ details p {
         bottom: clamp(20px, 10%, 80px); /*justerer avstand fra bunnen dynamisk */
         left: clamp(60%, 75%, 85%); /*justerer posisjon til venstre dynamisk */
         padding: clamp(0.4rem, 1.5vw, 1.5rem); /*dynamisk padding */
+        background-color: white;
       }
+
+      .btn-slider:hover { 
+        background-color: black; /* Sort */
+        color: white; /* Hvit */
+    }
 
     .btn-product {
         margin: 1rem;
@@ -967,7 +1018,7 @@ details p {
 
     .product-item i.fa-heart:hover,
     .product-item-product i.fa-heart:hover { /*når hjertet blir hovret over, vil fargen endres til rød*/
-        color: rgb(199, 38, 38);
+        color: rgb(214, 0, 0);
     }
 
     /*grid-oppsett for kategoriene*/
@@ -991,6 +1042,14 @@ details p {
     .categories figure:hover figcaption{
         transform: scale(1.1); /*category teksten får en "forstørrelse" effekt ved hover*/
         text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /*gir skyggen er sterkere effekt, for å gjøre hover effekten enda mer synelig*/
+    }
+
+    #customer-reviews h3{
+        font-size: 2.4rem;
+    }
+
+    #customer-reviews-gallery {
+        padding: 1rem 0rem 1.5rem 3rem;
     }
 
 
@@ -1058,15 +1117,20 @@ details p {
         grid-template-areas: /*grid-area gjør at h2 ligger venstre, mens a ligger høyre*/
             "h2 a";
         align-items: center;
+        padding: 0;
     }
 
     #product-title-product h2{
         grid-area: h2;
+        text-align: left;
+        padding-left: 2rem;
+        font-size: 3.2rem;
     }
 
     #product-title-product a{
         grid-area: a;
         text-align: right; /*teskten ligger nå helt til høyre, for å matche h2 som ligger helt til venstre*/
+        padding-right: 2rem;
     }
 
 /*-------------------------------------------*/

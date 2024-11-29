@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Donec laoreet dapibus ante et porta. Donec quis erat malesuada, commodo ante eget, semper eros. Vivamus tempus sapien quam, vel fermentum magna interdum vitae"> 
     <meta name="author" content="Per Anders Søstrand Fredriksen">
     <link rel="stylesheet" href="css/ikoner/css/solid.css">
     <link rel="stylesheet" href="css/ikoner/css/fontawesome.css">
     <link rel="stylesheet" href="css/ikoner/css/brands.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="css/ressurser/koala.jpg" type="image/x-icon">
-    <title>Per Anders's Nettbutikk</title>
+    <title>Kasse - Koala Merch</title>
 </head>
 
 <body id="checkout">
@@ -56,7 +57,7 @@
                     </section>
                     <form>
                         <select class="sizes" required>
-                            <option value=""disabled selected>Velg størrelse</option>
+                            <option value="" disabled selected>Velg størrelse</option>
                             <option value="s">S</option>
                             <option value="m">M</option>
                             <option value="l">L</option>
@@ -64,12 +65,11 @@
                             <option value="xxl">XXL</option>
                         </select>
                     </form>
-                    <section class="number-of" required>
-                        <input type="number" value="1"/>
+                    <section class="number-of">
+                        <input type="number" value="1" required>
                     </section>
                 </figure>
             </section>
-            <!--------Flere nedover her-->
         </div>
 
         <div class="personal-information">
@@ -77,32 +77,38 @@
             <h4>Leveringsadresse</h4>
             <form class="place-of-residence">
                 <label for="firstname">Fornavn</label>
-                <input type="text" id="firstname" maxlenght="20" placeholder=" Anton*" required/>
+                <input type="text" id="firstname" maxlength="20" placeholder=" Anton*" required>
+                <span class="error-message">Vennligst full in et gydlig Fornavn. Eksempel: Steinar</span>
 
                 <label for="secondname">Etternavn</label>
-                <input type="text" id="secondname" maxlenght="50" placeholder=" Antonsen*" required><br>
+                <input type="text" id="secondname" maxlength="50" placeholder=" Antonsen*" required>
+                <span class="error-message">Vennligst fyll inn et gyldig Etternavn. Eksempel: Nilsen</span>
 
                 <label for="street-address">Gateadresse</label>
-                <input type="text" id="street-address" maxlenght="50" placeholder=" BRA veien 4*" required><br>
+                <input type="text" id="street-address" maxlength="50" placeholder=" BRA veien 4*" required>
+                <span class="error-message">Vennligst fyll inn en gydlig Gateadresse. Eksempel: Slottsplassen 1</span>
 
                 <label for="postnumber">Postnummer</label>
-                <input type="number" id="postnumber" maxlenght="50" placeholder=" 1752*" required/>
+                <input type="number" id="postnumber" placeholder=" 1752*" required>
+                <span class="error-message">Vennligst fyll inn et gyldig Postnummer. Eksempel: 1752</span>
 
                 <label for="city">Poststed</label>
-                <input type="text" id="city" maxlenght="50" placeholder=" Halden*" required/>
-            </form>
-            <h4>Kontaktinformasjon</h4>
-            <form class="contact-information">
+                <input type="text" id="city" maxlength="50" placeholder=" Halden*" required>
+                <span class="error-message">Vennligst fyll inn et gyldig Poststed. Eksempel: Oslo</span>
+
+                <h4>Kontaktinformasjon</h4>
+
                 <label for="email">E-post</label>
-                <input type="email" id="email" maxlenght="50" placeholder=" Antonantonsen@hiof.no*" required/><br>
+                <input type="email" id="email" maxlength="50" placeholder=" Antonantonsen@hiof.no*" required>
+                <span class="error-message">Vennligst fyll inn en gyldig e-postadresse. Eksempel: skoledue@hiof.no</span>
 
                 <label for="phonenumber">Telefon</label>
-                <input type="tel" id="phonenumber" placeholder=" +4749***018" required>
-            </form> 
-            <section class="btn-personal-information">
-                <input type="button" onclick="alert('Lagret')" value="Lagre">
+                <input type="tel" id="phonenumber" maxlength="50" placeholder=" +4749***018" required>
+                <span class="error-message">Vennligst fyll inn et gyldig Telefonnummer. Eksempel: +4712345678</span>
+
+                <button type="submit">Lagre</button>
                 <a href="index.html">Avbryt</a>
-            </section>
+            </form> 
         </div>
 
         <div class="delivery">
@@ -153,13 +159,15 @@
             </section>
             <form class="card-information">
                 <label for="cardnumber">Kortnummer</label>
-                <input type="number" id="cardnumber" maxlenght="16" placeholder=" 342342****4435" required/><br>
+                <input type="number" id="cardnumber" placeholder=" 342342****4435" required/>
+                <span class="error-message">Vennligst fyll inn et gyldig Kortnummer. Eksempel: 1234567812345678</span>
 
                 <label for="expiry-date">Utløpsdato</label>
                 <input type="month" id="expiry-date" required>
 
                 <label for="CVC">CVC/CVV</label>
-                <input type="number" id="CVC" maxlenght="10" placeholder=" CVC/CVV" required>
+                <input type="number" id="CVC" placeholder=" CVC/CVV" required>
+                <span class="error-message">Vennligst fyll inn et gyldig CVC eller CVV nummer. Eksempel: 123</span>
             </form>
             <section class="finish-payment">
                 <p>Å betale inkl. mva.</p>
@@ -184,10 +192,10 @@
         <section class="information">
             <h3>KONTAKT</h3>
             <ul>
-                <li><i class="fa-solid fa-location-dot"></i> Adresse: B R A Veien 4, 1757 Halden</li>
-                <li><i class="fa-solid fa-phone"></i> Telefon: 69 60 80 00</li>
-                <li><i class="fa-solid fa-envelope"></i> E-post: pafredri@hiof.no</li>
-                <li><i class="fa-solid fa-clock"></i> Åpningstider: 07:00 - 15:30</li>
+                <li><i class="fa-solid fa-location-dot" tabindex="0"></i> Adresse: B R A Veien 4, 1757 Halden</li>
+                <li><i class="fa-solid fa-phone" tabindex="0"></i> Telefon: 69 60 80 00</li>
+                <li><i class="fa-solid fa-envelope" tabindex="0"></i> E-post: pafredri@hiof.no</li>
+                <li><i class="fa-solid fa-clock" tabindex="0"></i> Åpningstider: 07:00 - 15:30</li>
             </ul>
         </section>
         <section class="shortcuts">
@@ -196,6 +204,7 @@
                 <li><a href="index.html#categories">Kategorier</a></li>
                 <li><a href="product.html">Produkter</a></li>
                 <li><a href="index.html#contact">Kontakt oss</a></li>
+                <li><a href="WCAG.xlsx">Tilgjengelighetserklæring</a></li>
             </ul>
         </section>
         <section class="social-media">
