@@ -131,6 +131,18 @@ main {
     grid-area: main; /*setter grid-area main*/
 }
 
+/*back to top styling*/
+#back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    background-color: #252525;
+    font-size: 40px;
+    color: #fff;
+    border: 3px solid #252525;
+    border-radius: 0.5rem;
+  }
+
 .slide-container {
     padding: 0.4rem;
     width: 100%;  
@@ -765,17 +777,16 @@ details p {
     text-align: left;
 }
 
-#shopping-bag{
+.items-in-cart{
     text-align: left;
 }
 
-#shopping-bag h2{
+.items-in-cart h2{
     padding-left: 2.5rem;
 }
 
 .checkout-product img{
     max-width: 200px;
-    width: 100%;
 }
 .checkout-product{
     text-align: left;
@@ -811,10 +822,11 @@ details p {
 /*mer styling*/
 .number-of {
     cursor: pointer;
-    border: none;
+    border: 1px #eeeeee solid;
     max-width: 60px;
     display: flex;
     margin-left: 1rem;
+    padding: 0.4rem;
 }
 
 .number-of input{
@@ -887,7 +899,7 @@ form input {
 .btn-personal-information button {
     padding: 10px 20px;
     font-size: 14px;
-    color: white;
+    color: #eeeeee;
     background-color: black;
     border: none;
     border-radius: 4px;
@@ -932,7 +944,6 @@ form input {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    align-items: left;
     text-align: left;
 }
 
@@ -958,6 +969,10 @@ form input {
     flex-direction: column; /*stacker seksjoner vertikalt*/
     padding: 1rem; /*invendig padding */
     margin: 0 auto;
+}
+
+.main-grid .main-checkout h2{
+    font-size: 1.4rem;
 }
 
 .items-checkout {
@@ -1448,7 +1463,6 @@ input:not(:placeholder-shown):invalid + .error-message {
         margin: 0 auto; /*sentrer horisontalt*/
         text-align: left;
         gap: 2rem;
-
     }
 
     .checkout {
@@ -1458,13 +1472,13 @@ input:not(:placeholder-shown):invalid + .error-message {
     }
 
     .checkout-product {
-        display: flex; 
-        align-items: flex-start; 
-        gap: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem; 
     }
 
     .checkout-product img {
-        max-width: 150px; /*spesefik img size*/
+        max-width: 275px;
         height: auto;
     }
 
@@ -1472,21 +1486,34 @@ input:not(:placeholder-shown):invalid + .error-message {
         flex: 1;
     }
 
-    .items-checkout{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    .size-and-number {
+        margin-top: 1rem;
+        align-self: flex-start; 
+    }
+
+    .checkout-product img {
+        height: auto;
+    }
+
+    .product-info-checkout {
+        flex: 1;
+    }
+
+    .main-grid .main-checkout h2{
+        font-size: 2.6rem;
     }
 
     .items-in-cart,
     .personal-information,
     .delivery-border,
     .payment {
-        border: 2px solid white;
+        border: 2px solid #eeeeee;
         padding: 1rem; /*legger til invending spacing */
         margin: 0rem;
-        width: 900px;
+        max-width: 900px;
     }
+
+    
 
     .delivery-option {
         flex-direction: row;
